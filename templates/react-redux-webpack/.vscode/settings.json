@@ -1,0 +1,12 @@
+{
+    "editor.tabSize": 2,
+    "editor.rulers": [100],
+    "editor.formatOnSave": false,
+    "files.autoSave": "off",
+    "eslint.trace.server": "messages",
+    "eslint.autoFixOnSave": true,
+    "editor.showFoldingControls": "always",
+    "editor.folding": true,
+    "editor.foldingStrategy": "indentation", 
+  }
+  // eslint plugin for vscode required
