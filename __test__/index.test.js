@@ -1,36 +1,39 @@
-// /* test/promise-md5.js */
-// // tps://github.com/ewnd9/inquirer-test/blob/master/test/fixtures/cli.js
-// var promiseMd5 = require('../promise-md5');
-// var expect = require('chai').expect;
+'use strict';
 
-// describe('#promiseMd5()', function() {
+var inquirer = require('inquirer');
+var mocki = require('../contents/inquirer-mock-prompt');
 
-//   context('with string argument', function() {
-//     it('should compute MD5 hash', function() {
-    
-//       return promiseMd5('Glad Chinda')
-//         .then(function(hash) {
-//           // add some assertions
-//           expect(hash)
-//             .to.be.a('string')
-//             .that.matches(/^[a-f0-9]{32}$/)
-//             .and.equal('877dbb93f50eb8a89012e15bd37ee7e4');
-//         })
-        
-//     })
-//   })
-  
-//   context('with non-string argument', function() {
-//     it('should throw an error', function() {
-    
-//       return promiseMd5(12345)
-//         .catch(function(err) {
-//           // add an assertion to check the error
-//           expect(function() { throw err })
-//             .to.throw(TypeError, 'Data must be a string or a buffer');
-//         })
-        
-//     })
-//   })
-  
-// })
+// The mock is automatically removed after the answers are returned.
+it('work should be false', async t => {
+  mocki({
+    work: false
+  });
+  const answers = await inquirer.prompt({
+    type: 'confirm',
+    name: 'work',
+    default: true
+  });
+  t.is(answers.work, false); // => true
+});
+
+// You can even mock multiple times
+it('work should be false', async t => {
+  mocki({
+    work: false
+  });
+  mocki({
+    text: 'cool'
+  });
+
+  let answers1 = await inquirer.prompt({
+    type: 'confirm',
+    name: 'work',
+    default: true
+  });
+  t.is(answers.work, false); // => true
+  answers = await inquirer.prompt({
+    type: 'input',
+    name: 'text',
+  });
+  t.is(answers.text, 'cool'); // => true
+});

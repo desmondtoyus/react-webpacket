@@ -4,7 +4,9 @@
   "description": "React-webpacket by is a JavaScript library for dealing with the frustration of configuring and setting up react, redux and webpack environment. React-webpacket automatically sets up your react, redux and webpack app environment, no need to bother with redux configuration. Avoid unnecessary time wasting and jump straight into coding. ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --verbose --colors",
+    "test:watch": "jest --watchAll --verbose",
+    "test:coverage": "jest --verbose --coverage"
   },
   "bin": {
     "react-webpacket": "./index.js"
@@ -17,7 +19,17 @@
     "shelljs": "^0.8.3"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^6.0.2"
+    "jest": "^24.6.0"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/templates/"
+    ],
+    "collectCoverageFrom": [
+      "contents/**/*.{js,jsx}",
+      "<rootDir>/index.js"
+    ]
   }
 }
