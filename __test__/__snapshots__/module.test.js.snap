@@ -1,6 +1,123 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`viewTemplate should return a string 1`] = `
+exports[`actionTemplate() should return a string 1`] = `
+"import { SHARED } from './types';
+    export const sharedInputChange = ({ prop, value }) => (dispatch) => {
+    dispatch({ type: SHARED, prop, value });
+};"
+`;
+
+exports[`caddActionToType() should return a string 1`] = `
+"export const INPUT_CHANGE = 'INPUT_CHANGE';
+ export const FETCH_DATA = 'FETCH_DATA';
+export const  ADD_USER = 'ADD_USER'; 
+"
+`;
+
+exports[`configStore() should return a string 1`] = `
+"import { combineReducers } from 'redux';
+import {
+    sampleReducer,
+  sharedReducer, 
+
+} from './reducers';
+
+const configureStore = combineReducers({
+sample: sampleReducer,
+shared : sharedReducer, 
+
+});
+export default configureStore;"
+`;
+
+exports[`createApp() should return a string 1`] = `
+"import React from 'react';
+import { Helmet } from 'react-helmet';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import SamplePage from './views/SamplePage';
+import Home from './views/home'; 
+
+import PageNotFound from './views/PageNotFound';
+
+const App = () => (
+    <div className=\\"App\\">
+        <Helmet titleTemplate=\\"%s - SiteName\\" defaultTitle=\\"Some default title\\">
+            <meta name=\\"description\\" content=\\"some description content\\"/>
+        </Helmet>
+        {/* BrowserRouter comes with default history */}
+        <BrowserRouter>
+            <div>
+                <Header/>
+                <div className=\\"main\\">
+                    <Switch>
+                        <Route exact path=\\"/\\" component={SamplePage}/>
+                                    <Route exact path=\\"/home\\" component={Home} /> 
+
+                        <Route path=\\"\\" component={PageNotFound}/>
+                    </Switch>
+                    <Footer/>
+                </div>
+            </div>
+        </BrowserRouter>
+    </div>
+);
+
+export default App;"
+`;
+
+exports[`pageUrls() should return a string 1`] = `
+"
+  import React from 'react';
+  import { Link } from 'react-router-dom';
+  const Views = () => (
+    <div className=\\"col-md-6\\">
+            <div className=\\"panel panel-success\\">
+                <div className=\\"panel-heading\\">
+                    <h3 className=\\"panel-title\\">
+                        My Pages</h3>
+                </div>
+                <ul className=\\"list-group\\">
+                <Link to=\\"/\\" className=\\"list-group-item active\\"> Sample Page </Link>
+    <Link className=\\"list-group-item active\\" to=\\"/home\\"> Home </Link>
+    </ul>
+    </div>
+</div>
+  );
+  export default Views;"
+`;
+
+exports[`reducerTemplate() should return a string 1`] = `
+"import { SHARED } from '../actions/types';
+
+    const INITIAL_STATE = {
+      name: '',
+    };
+    
+    export default function (state = INITIAL_STATE, action) {
+      switch (action.type) {
+        case SHARED:
+          return {
+            ...state,
+            [action.prop]: action.value,
+          };
+        default:
+          return state;
+      }
+    };"
+`;
+
+exports[`rootReducers() should return a string 1`] = `
+"import sampleReducer from './samplepage.reducer';  
+import sharedReducer from './shared.reducer'; 
+
+export {  sampleReducer, 
+ sharedReducer, 
+};"
+`;
+
+exports[`viewTemplate() should return a string 1`] = `
 "import React from 'react';
     import { Helmet } from 'react-helmet';
     

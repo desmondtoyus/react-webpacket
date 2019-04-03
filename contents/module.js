@@ -1,5 +1,6 @@
 "use strict"
 exports.viewTemplate = function (name) {
+  if (!name) return;
     const viewName = capitalizeFirstLetter(name.toLowerCase());
     return `import React from 'react';
     import { Helmet } from 'react-helmet';
@@ -30,6 +31,7 @@ exports.viewTemplate = function (name) {
 };
 
 exports.reducerTemplate = function (name) {
+  if (!name) return;
     const reducerName = name.toUpperCase();
     return `import { ${reducerName} } from '../actions/types';
 
@@ -51,6 +53,7 @@ exports.reducerTemplate = function (name) {
 }
 
 exports.actionTemplate = function (name) {
+  if (!name) return;
     const reducerName = name.toUpperCase();
     const actionName = name.toLowerCase()
 return `import { ${reducerName} } from './types';
@@ -61,6 +64,7 @@ return `import { ${reducerName} } from './types';
 
 
 exports.rootReducers = function(reducers){
+  if(!Array.isArray(reducers)) return;
     let container=`import sampleReducer from './samplepage.reducer';  \n`;
     let reducersContainer =`
 export {  sampleReducer, \n` 
@@ -76,6 +80,7 @@ return container + reducersContainer + close ;
 }
 
 exports.configStore= function (reducers) {
+  if(!Array.isArray(reducers)) return;
 return `import { combineReducers } from 'redux';
 import {
     sampleReducer,
@@ -90,6 +95,7 @@ export default configureStore;`
 }
 
 exports.addActionToType = function(reducers) {
+  if(!Array.isArray(reducers)) return;
     let container= `export const INPUT_CHANGE = 'INPUT_CHANGE';
  export const FETCH_DATA = 'FETCH_DATA';\n`;
     reducers.map((reducer, index)=>{
@@ -101,6 +107,7 @@ exports.addActionToType = function(reducers) {
 }
 
 exports.createApp = function (views) {
+  if(!Array.isArray(views)) return;
 return`import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
@@ -142,7 +149,7 @@ function capitalizeFirstLetter(string) {
 function createRoutes(views) {
     return views.map((view, index)=>{
       if (view !== '') {
-        return  `            <Route exact path="/${view.toLowerCase()}" component={${capitalizeFirstLetter(view)}} /> \n` ;
+        return  `<Route exact path="/${view.toLowerCase()}" component={${capitalizeFirstLetter(view)}} /> \n` ;
 
       }
     }).join('');
@@ -171,6 +178,7 @@ function listReducersPath(reducers){
 }
 
 exports.pageUrls =function (views) {
+  if(!Array.isArray(views) || !views.length) return;
   return `
   import React from 'react';
   import { Link } from 'react-router-dom';
