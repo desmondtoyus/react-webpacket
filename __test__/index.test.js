@@ -1,14 +1,24 @@
 'use strict';
-import test from 'ava';
-import run, { UP, DOWN, ENTER } from 'inquirer-test';
 
-const cliPath = __dirname + '/mock/cli.js';
-console.log('PATTHHH', cliPath);
-test('press enter', async t => {
-  const result = await run([cliPath], [ENTER, 'home']);
-  t.regex(result, new RegExp('react-redux-webpack-home', 'g'));
+jest.mock('fs');
+
+describe('listFilesInDirectorySync', () => {
+  const MOCK_FILE_INFO = {
+    '/path/to/file1.js': 'console.log("file1 contents");',
+    '/path/to/file2.txt': 'file2 contents',
+  };
+
+  beforeEach(() => {
+    // Set up some mocked out file info before each test
+    require('./__mock__/fs').__setMockFiles(MOCK_FILE_INFO);
+  });
+
+  test('includes all files in the directory in the summary', () => {
+    const FileSummarizer = require('../index');
+    const fileSummary = FileSummarizer.summarizeFilesInDirectorySync(
+      './',
+    );
+
+    expect(fileSummary.length).toBe(2);
+  });
 });
-// test('add input', async t => {
-//   const result = await run([cliPath], 'home', ENTER);
-//   t.regex(result, new RegExp('home', 'g'));
-// });

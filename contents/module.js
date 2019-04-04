@@ -1,4 +1,34 @@
 "use strict"
+exports.QUESTIONS = [
+  {
+    name: 'projectChoice',
+    type: 'list',
+    message: 'Select react-redux-webpack project. ',
+    choices: ['react-redux-webpack'] 
+},
+
+  {
+    name: 'views',
+    type: 'input',
+    message: 'Views (Separated by a space, Enter to Ignore):',
+    validate: function (input) {
+      if (/^([A-Za-z\-\_\d])+$/.test(input)) return true;
+      else if (/^$|\s+/.test(input)) return true;
+      else return 'Only letters, numbers, underscores and hashes are allowed, press Enter to esc.';
+    }
+  },
+  {
+    name: 'reactRedux',
+    type: 'input',
+    message: 'Redux Reducers (Separated by a space, Enter to Ignore):',
+    validate: function (input) {
+      if (/^([A-Za-z\-\_\d])+$/.test(input)) return true;
+      else if (/^$|\s+/.test(input)) return true;
+      else return 'Only letters, numbers, underscores and hashes are allowed, press Enter to esc.';
+    }
+  },
+];
+
 exports.viewTemplate = function (name) {
   if (!name) return;
     const viewName = capitalizeFirstLetter(name.toLowerCase());
@@ -12,7 +42,6 @@ exports.viewTemplate = function (name) {
     
         };
       }
-    
       render() {
         return (
           <div>

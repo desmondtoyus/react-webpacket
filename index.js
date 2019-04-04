@@ -4,47 +4,12 @@ const inquirer = require('inquirer');
 const shell = require('shelljs');
 const fs = require('fs');
 const CURR_DIR = process.cwd();
-const {viewTemplate,  actionTemplate, reducerTemplate, rootReducers, configStore, addActionToType, createApp, pageUrls } = require('./contents/module');
-const CHOICES = fs.readdirSync(`${__dirname}/templates`);
-const QUESTIONS = [
-  {
-    name: 'projectChoice',
-    type: 'list',
-    message: 'Select react-redux-webpack project. ',
-    choices: CHOICES 
-},
-    {
-         when : function( answers ) {
-        if (answers['projectChoice'] === "react-webpack") {
-            return answers.projectChoice;
-        }
-      }
-    },
+const {viewTemplate,  actionTemplate, reducerTemplate, rootReducers, configStore, addActionToType, createApp, pageUrls, QUESTIONS } = require('./contents/module');
 
-  {
-    name: 'views',
-    type: 'input',
-    message: 'Views (Separated by a space, Enter to Ignore):',
-    validate: function (input) {
-      if (/^([A-Za-z\-\_\d])+$/.test(input)) return true;
-      else if (/^$|\s+/.test(input)) return true;
-      else return 'Only letters, numbers, underscores and hashes are allowed, press Enter to esc.';
-    }
-  },
-  {
-    name: 'reactRedux',
-    type: 'input',
-    message: 'Redux Reducers (Separated by a space, Enter to Ignore):',
-    validate: function (input) {
-      if (/^([A-Za-z\-\_\d])+$/.test(input)) return true;
-      else if (/^$|\s+/.test(input)) return true;
-      else return 'Only letters, numbers, underscores and hashes are allowed, press Enter to esc.';
-    }
-  },
-];
+
 
 inquirer.prompt(QUESTIONS)
-  .then(answers => {
+  .then((answers) => {
     const projectChoice = answers['projectChoice'];
     const projectName = process.argv[2] || 'wepacket_app';
     const templatePath = `${__dirname}/templates/${projectChoice}`;
@@ -209,3 +174,10 @@ function distinctValue(value, index, self) {
   return self.indexOf(value.toLowerCase()) === index;
 }
 
+// Copyright 2004-present Facebook. All Rights Reserved.
+
+function summarizeFilesInDirectorySync(directory) {
+  return fs.readdirSync(directory).map(fileName => ({directory, fileName}));
+}
+
+exports.summarizeFilesInDirectorySync = summarizeFilesInDirectorySync;

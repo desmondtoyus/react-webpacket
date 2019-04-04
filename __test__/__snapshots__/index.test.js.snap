@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CLI TEST should return an object 1`] = `
+"[32m?[39m [1mSelect react-redux-webpack project. [22m[0m [0m[2m(Use arrow keys)[22m
+[36m❯ react-redux-webpack[39m [22D[22C[2K[1A[2K[G[32m?[39m [1mSelect react-redux-webpack project. [22m[0m [0m[36mreact-redux-webpack[39m[58D[58C
+[32m?[39m [1mViews (Separated by a space, Enter to Ignore):[22m[0m [0m[49D[49C[2K[G[32m?[39m [1mViews (Separated by a space, Enter to Ignore):[22m[0m [0mh[50D[50C[2K[G[32m?[39m [1mViews (Separated by a space, Enter to Ignore):[22m[0m [0mho[51D[51C[2K[G[32m?[39m [1mViews (Separated by a space, Enter to Ignore):[22m[0m [0mhom[52D[52C[2K[G[32m?[39m [1mViews (Separated by a space, Enter to Ignore):[22m[0m [0mhome[53D[53C[2K[G[32m?[39m [1mViews (Separated by a space, Enter to Ignore):[22m[0m [0m[36mhome[39m[53D[53C
+[32m?[39m [1mRedux Reducers (Separated by a space, Enter to Ignore):[22m[0m [0m[58D[58C[2K[G[32m?[39m [1mRedux Reducers (Separated by a space, Enter to Ignore):[22m[0m [0ma[59D[59C[2K[G[32m?[39m [1mRedux Reducers (Separated by a space, Enter to Ignore):[22m[0m [0mau[60D[60C[2K[G[32m?[39m [1mRedux Reducers (Separated by a space, Enter to Ignore):[22m[0m [0maut[61D[61C[2K[G[32m?[39m [1mRedux Reducers (Separated by a space, Enter to Ignore):[22m[0m [0mauth[62D[62C[2K[G[32m?[39m [1mRedux Reducers (Separated by a space, Enter to Ignore):[22m[0m [0m[36mauth[39m[62D[62C
+"
+`;

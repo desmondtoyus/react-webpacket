@@ -1,5 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`QUESTIONS should return a string 1`] = `
+Array [
+  Object {
+    "choices": Array [
+      "react-redux-webpack",
+    ],
+    "message": "Select react-redux-webpack project. ",
+    "name": "projectChoice",
+    "type": "list",
+  },
+  Object {
+    "message": "Views (Separated by a space, Enter to Ignore):",
+    "name": "views",
+    "type": "input",
+    "validate": [Function],
+  },
+  Object {
+    "message": "Redux Reducers (Separated by a space, Enter to Ignore):",
+    "name": "reactRedux",
+    "type": "input",
+    "validate": [Function],
+  },
+]
+`;
+
 exports[`actionTemplate() should return a string 1`] = `
 "import { SHARED } from './types';
     export const sharedInputChange = ({ prop, value }) => (dispatch) => {
@@ -53,7 +78,7 @@ const App = () => (
                 <div className=\\"main\\">
                     <Switch>
                         <Route exact path=\\"/\\" component={SamplePage}/>
-                                    <Route exact path=\\"/home\\" component={Home} /> 
+                        <Route exact path=\\"/home\\" component={Home} /> 
 
                         <Route path=\\"\\" component={PageNotFound}/>
                     </Switch>
@@ -128,7 +153,6 @@ exports[`viewTemplate() should return a string 1`] = `
     
         };
       }
-    
       render() {
         return (
           <div>

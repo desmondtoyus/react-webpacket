@@ -148,5 +148,18 @@ describe('createApp()', function () {
     });
 });
 
+describe('QUESTIONS', function () {
+    it('Should exist', function () {
+        expect(modules.QUESTIONS).toBeDefined();
+    });
+    it('should be an Array', function () {
+        expect(modules.QUESTIONS).toBeInstanceOf(Array);
+    });
+    it('should return a string', function () {
+        const result = modules.QUESTIONS;
+        expect(result).toMatchSnapshot();
+    });
+});
+
 // createApp
 
