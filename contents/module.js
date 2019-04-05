@@ -177,7 +177,8 @@ export default App;`
 }
 
 function capitalizeFirstLetter(string) {
-    return string.toLowerCase().charAt(0).toUpperCase() + string.slice(1);
+   let stringLower = string.toLowerCase();
+    return stringLower.charAt(0).toUpperCase() + string.slice(1);
 }
 
 function createRoutes(views) {
@@ -236,7 +237,7 @@ exports.pageUrls =function (views) {
 function  fetchPageUrls (views) {
   return views.map((view, index)=>{
     if (view !== '') {
-      return  `<Link className="list-group-item active" to="/${view.toLowerCase()}"> ${capitalizeFirstLetter(view)} </Link>`
+      return  `<Link className="list-group-item active" to="/${view.toLowerCase()}"> ${capitalizeFirstLetter(view.toLowerCase())} </Link>`
     }
   }).join('');
 }

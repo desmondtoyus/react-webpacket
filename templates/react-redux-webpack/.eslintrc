@@ -21,7 +21,7 @@
       "specialLink": [ "to", "hrefLeft", "hrefRight" ],
       "aspects": [ "noHref", "invalidHref", "preferButton" ]
     }],
-    "max-len": ["error", {"code": 320, "ignoreRegExpLiterals": true, "tabWidth": 2}],
+    "max-len": ["error", {"code": 620, "ignoreRegExpLiterals": true, "tabWidth": 2}],
     "no-console": [0],
     "linebreak-style": "off",
     "react/jsx-one-expression-per-line": [0, { "allow": "literal" }]
