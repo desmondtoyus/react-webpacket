@@ -1,6 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-import toJson from 'enzyme-to-json';
+import { shallow } from 'enzyme';
 // import configureStore from 'redux-mock-store'
 
 import PageNotFound from "../../app/views/PageNotFound";

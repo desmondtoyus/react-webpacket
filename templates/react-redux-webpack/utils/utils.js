@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 import { routerStateReducer } from 'redux-router';
 
 
+/* eslint-disable */
 /* Sets up basic variables to be used by integration tests
  * Params:
  *   reducers: should be an object with all the reducers your page uses

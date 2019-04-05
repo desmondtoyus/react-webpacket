@@ -1,5 +1,5 @@
 import React from 'react';
-import Enzyme, { shallow, mount } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 // import toJson from 'enzyme-to-json';
 // import configureStore from 'redux-mock-store'
@@ -7,10 +7,10 @@ import renderer from 'react-test-renderer';
 // while view folder does intergration test with 'mount'
 import Table from "../../app/components/Table";
 let  mockContent =[
-    {name: 'Desmondjhjhhj', date:'Nov 4 1998', email:'desmondkjjkjh@pilotx.tv', plan:'opoCustom'},
-    {name: 'Desmond2,klk', date:'Nov 4 1955', email:'desmond2l;;l@pilotx.tv', plan:'kjpaid'},
-    {name: 'Desmondjhjhhj', date:'Nov 4 1998', email:'desmondkjjkjh@pilotx.tv', plan:'opoCustom'},
-    {name: 'Desmond2,klk', date:'Nov 4 1955', email:'desmond2l;;l@pilotx.tv', plan:'kjpaid'}
+    {name: 'Desmondjhjhhj', date:'Nov 4 1998', email: 'desmondkjjkjh@pilotx.tv', plan:'opoCustom'},
+    {name: 'Desmond2,klk', date:'Nov 4 1955', email: 'desmond2l;;l@pilotx.tv', plan:'kjpaid'},
+    {name: 'Desmondjhjhhj', date:'Nov 4 1998', email: 'desmondkjjkjh@pilotx.tv', plan:'opoCustom'},
+    {name: 'Desmond2,klk', date:'Nov 4 1955', email: 'desmond2l;;l@pilotx.tv', plan:'kjpaid'}
 ]
 
 describe('Table Component', () => {

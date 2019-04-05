@@ -1,6 +1,6 @@
 {
   "name": "react-webpacket",
-  "version": "0.0.11",
+  "version": "0.1.2",
   "description": "React-webpacket by is a JavaScript library for dealing with the frustration of configuring and setting up react, redux and webpack environment. React-webpacket automatically sets up your react, redux and webpack app environment, no need to bother with redux configuration. Avoid unnecessary time wasting and jump straight into coding. ",
   "main": "index.js",
   "scripts": {
@@ -8,12 +8,27 @@
     "test:watch": "jest --watchAll --verbose",
     "test:coverage": "jest --verbose --coverage"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/desmondtoyus/react-webpacket.git"
+  },
+  "bugs": {
+    "url": "https://github.com/desmondtoyus/react-webpacket/issues"
+  },
   "bin": {
     "react-webpacket": "./index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "React",
+    "Webpack",
+    "NodeJS",
+    "CSS",
+    "HTML",
+    "Javascript"
+  ],
+  "author": "Desmond Ademiluyi",
+  "homepage": "https://github.com/desmondtoyus/react-webpacket#readme",
+  "license": "MIT",
   "dependencies": {
     "inquirer": "^6.2.2",
     "shelljs": "^0.8.3"

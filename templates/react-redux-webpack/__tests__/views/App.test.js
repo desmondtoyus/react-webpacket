@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { mount, shallow } from 'enzyme';
-import App from "../../app/App";
+import { shallow } from 'enzyme';
+import App from '../../app/App';
 
 
 describe("App", () => {

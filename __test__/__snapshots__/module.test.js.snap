@@ -26,7 +26,11 @@ Array [
 `;
 
 exports[`actionTemplate() should return a string 1`] = `
-"import { SHARED } from './types';
+"import { SHARED, 
+  RESET_REDUCER } from './types';
+    export const resetReducer = () => dispatch => {
+      dispatch({type: RESET_REDUCER});
+    };
     export const sharedInputChange = ({ prop, value }) => (dispatch) => {
     dispatch({ type: SHARED, prop, value });
 };"
@@ -34,6 +38,8 @@ exports[`actionTemplate() should return a string 1`] = `
 
 exports[`caddActionToType() should return a string 1`] = `
 "export const INPUT_CHANGE = 'INPUT_CHANGE';
+    export const RESET_REDUCER = 'RESET_REDUCER'; 
+
  export const FETCH_DATA = 'FETCH_DATA';
 export const  ADD_USER = 'ADD_USER'; 
 "

@@ -85,7 +85,11 @@ exports.actionTemplate = function (name) {
   if (!name) return;
     const reducerName = name.toUpperCase();
     const actionName = name.toLowerCase()
-return `import { ${reducerName} } from './types';
+return `import { ${reducerName}, 
+  RESET_REDUCER } from './types';
+    export const resetReducer = () => dispatch => {
+      dispatch({type: RESET_REDUCER});
+    };
     export const ${actionName}InputChange = ({ prop, value }) => (dispatch) => {
     dispatch({ type: ${reducerName}, prop, value });
 };`
@@ -126,6 +130,7 @@ export default configureStore;`
 exports.addActionToType = function(reducers) {
   if(!Array.isArray(reducers)) return;
     let container= `export const INPUT_CHANGE = 'INPUT_CHANGE';
+    export const RESET_REDUCER = 'RESET_REDUCER'; \n
  export const FETCH_DATA = 'FETCH_DATA';\n`;
     reducers.map((reducer, index)=>{
       if (reducer !== '') {

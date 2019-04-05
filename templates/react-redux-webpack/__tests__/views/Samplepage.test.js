@@ -1,16 +1,10 @@
 
 import React from 'react';
 import { Provider } from 'react-redux';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 // make sure to import your connected component, not your react class
-import ConnectedSamplePage,{SamplePage} from "../../app/views/SamplePage";
-import renderer from "react-test-renderer";
-import configureStore from 'redux-mock-store';
-import {createStore} from 'redux';
-import * as Enzyme from 'enzyme';
-import ReactSixteenAdapter from 'enzyme-adapter-react-16';
-import   {store} from "../../app/store";
-
+import ConnectedSamplePage, {} from '../../app/views/SamplePage';
+import store from '../../app/store';
 
 
 describe("ConnectedSamplePage", () => {

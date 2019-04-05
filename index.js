@@ -95,7 +95,7 @@ function createSpecifiedContents(viewLists, type, location) {
     function(err) { 
         if (err) throw err;
         // if no error
-        console.log(`created.. ✓ /app/view/${name.toLowerCase()}${extention}.js`)
+        console.log(`created.. ✓ /${name.toLowerCase()}${extention}.js`)
       });
 
   });
