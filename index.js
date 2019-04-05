@@ -54,8 +54,8 @@ inquirer.prompt(QUESTIONS)
   
   
   function createUserSpecifiedContent(templatePath, newProjectPath, views, reducers) {
-    const viewsToCreate = views.trim().split(' ').filter(distinctValue);
-    const reducersToCreate = reducers.trim().split(' ').filter(distinctValue);
+    const viewsToCreate = views.trim().toString().split(' ').filter(distinctValue);
+    const reducersToCreate = reducers.trim().toString().split(' ').filter(distinctValue);
     createSpecifiedContents(viewsToCreate, 'views', newProjectPath);
     createSpecifiedContents(reducersToCreate, 'reducers', newProjectPath);
     createSpecifiedContents(reducersToCreate, 'actions', newProjectPath);
@@ -95,7 +95,7 @@ function createSpecifiedContents(viewLists, type, location) {
     function(err) { 
         if (err) throw err;
         // if no error
-        console.log(`created.. ✓ /${name.toLowerCase()}${extention}.js`)
+        console.log(`created.. ✓ view/${name.toLowerCase()}${extention}.js`)
       });
 
   });
@@ -171,7 +171,7 @@ function createAppRoutes(views, location) {
   
 }
 function distinctValue(value, index, self) { 
-  return self.indexOf(value.toLowerCase()) === index;
+  return self.indexOf(value) === index;
 }
 
 // Copyright 2004-present Facebook. All Rights Reserved.

@@ -177,7 +177,7 @@ export default App;`
 }
 
 function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+    return string.toLowerCase().charAt(0).toUpperCase() + string.slice(1);
 }
 
 function createRoutes(views) {
