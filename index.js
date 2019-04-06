@@ -4,7 +4,7 @@ const inquirer = require('inquirer');
 const shell = require('shelljs');
 const fs = require('fs');
 const CURR_DIR = process.cwd();
-const {viewTemplate,  actionTemplate, reducerTemplate, rootReducers, configStore, addActionToType, createApp, pageUrls, QUESTIONS } = require('./contents/module');
+const {viewTemplate,  actionTemplate, reducerTemplate, rootReducers, configStore, addActionToType, createApp, pageUrls, QUESTIONS, removeDuplicates } = require('./contents/module');
 
 
 
@@ -54,8 +54,8 @@ inquirer.prompt(QUESTIONS)
   
   
   function createUserSpecifiedContent(templatePath, newProjectPath, views, reducers) {
-    const viewsToCreate = views.trim().toString().split(' ').filter(distinctValue);
-    const reducersToCreate = reducers.trim().toString().split(' ').filter(distinctValue);
+    const viewsToCreate = removeDuplicates(views.trim().toString().split(' '));
+    const reducersToCreate = removeDuplicates(reducers.trim().toString().split(' '));
     createSpecifiedContents(viewsToCreate, 'views', newProjectPath);
     createSpecifiedContents(reducersToCreate, 'reducers', newProjectPath);
     createSpecifiedContents(reducersToCreate, 'actions', newProjectPath);
@@ -170,14 +170,4 @@ function createAppRoutes(views, location) {
     });
   
 }
-function distinctValue(value, index, self) { 
-  return self.indexOf(value) === index;
-}
 
-// Copyright 2004-present Facebook. All Rights Reserved.
-
-function summarizeFilesInDirectorySync(directory) {
-  return fs.readdirSync(directory).map(fileName => ({directory, fileName}));
-}
-
-exports.summarizeFilesInDirectorySync = summarizeFilesInDirectorySync;

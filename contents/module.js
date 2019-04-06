@@ -242,3 +242,14 @@ function  fetchPageUrls (views) {
   }).join('');
 }
 
+exports.removeDuplicates = function (arr) {
+  if(!Array.isArray(arr) || !arr.length) return;
+  let arrayOfDisticts = arr.reduce((prev, curr) =>{
+      const current = curr.toLowerCase();
+      if (!(prev.includes(current))) {
+        prev.push(current);
+      }
+      return prev;
+  },[] )
+  return arrayOfDisticts;
+}

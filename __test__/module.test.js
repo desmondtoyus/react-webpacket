@@ -161,5 +161,22 @@ describe('QUESTIONS', function () {
     });
 });
 
+describe('removeDuplicates()', function () {
+    it('Should exist', function () {
+        expect(modules.removeDuplicates).toBeDefined();
+    });
+    it('should be a function', function () {
+        expect(modules.removeDuplicates).toBeInstanceOf(Function);
+    });
+    it('should return matching array', function () {
+        const result = modules.removeDuplicates(['Desmond', 'DESMOND', 'ADE', 'Ade', 'ifeOLUwa', 'ifeoluwA']);
+        expect(result).toEqual(["desmond", "ade", "ifeoluwa"]);
+    });
+    it('should return false for string', function () {
+        const result = modules.removeDuplicates('ADD_USER');
+        expect(result).toBeFalsy();
+    });
+
+});
 // createApp
 
