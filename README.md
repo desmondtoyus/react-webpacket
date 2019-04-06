@@ -22,8 +22,7 @@ follow the prompt
 2. Enter names of your views (your App pages), separated by a space.
 3. Enter names of your redux reducers (separated by a space), actions, 
     reducers and a store are automatically created for these reducers.
-4. React-webpacket automatically installs dependencies, fix eslint  and run tests.
-5. The App then hot reloads in the browser with your pages and redux combinereducers, actions and store.
+4. React-webpacket automatically installs dependencies, fix eslint and then hot reloads in the browser with your pages and redux combinereducers, actions and store.
 ```
 
 ## Contributing

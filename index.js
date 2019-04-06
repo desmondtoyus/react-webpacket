@@ -89,7 +89,8 @@ function createSpecifiedContents(viewLists, type, location) {
     default:
       break;
   }
-  viewLists.map((name, index)=>{
+  return viewLists.map((name, index)=>{
+    if (name !=='') {
     fs.writeFile(`${localPath}/${name.toLowerCase()}${extention}.js`, action(name), 'ascii',
     // callback function that is called after writing file is done
     function(err) { 
@@ -97,7 +98,7 @@ function createSpecifiedContents(viewLists, type, location) {
         // if no error
         console.log(`created.. ✓ /${name.toLowerCase()}${extention}.js`)
       });
-
+    }
   });
 }  
 // rootReducers, configStore

@@ -98,9 +98,11 @@ return `import { ${reducerName},
 
 exports.rootReducers = function(reducers){
   if(!Array.isArray(reducers)) return;
-    let container=`import sampleReducer from './samplepage.reducer';  \n`;
+    let container=`import sampleReducer from './samplepage.reducer'; 
+    import exampleReducer from './example.reducer';  \n`;
     let reducersContainer =`
-export {  sampleReducer, \n` 
+export {  sampleReducer,
+    exampleReducer,  \n` 
     const close = `};`
     reducers.map((reducer, index)=>{
       if (reducer !== '') {
@@ -117,11 +119,13 @@ exports.configStore= function (reducers) {
 return `import { combineReducers } from 'redux';
 import {
     sampleReducer,
+    exampleReducer,
   ${listReducersPath(reducers)}
 } from './reducers';
 
 const configureStore = combineReducers({
 sample: sampleReducer,
+example:exampleReducer,
 ${listReducers(reducers)}
 });
 export default configureStore;`

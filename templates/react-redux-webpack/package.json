@@ -8,9 +8,9 @@
     "lint": "eslint ./ --cache --ignore-pattern .gitignore",
     "test:watch": "jest --watchAll --verbose",
     "test:coverage": "jest --verbose --coverage",
-    "dev": "npm test && webpack --open --config webpack.dev.js",
-    "build": "npm test && rimraf ./build && webpack --config webpack.prod.js",
-    "start": "npm test && babel-node ./node_modules/webpack-dev-server/bin/webpack-dev-server --mode development --port 8008 --open --history-api-fallback",
+    "dev": "webpack --open --config webpack.dev.js",
+    "build": "rimraf ./build && webpack --config webpack.prod.js",
+    "start": "babel-node ./node_modules/webpack-dev-server/bin/webpack-dev-server --mode development --port 8008 --open --history-api-fallback",
     "startapp": "concurrently \"npm start\" \"nodemon server\""
   },
   "repository": {

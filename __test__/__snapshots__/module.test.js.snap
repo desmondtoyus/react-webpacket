@@ -49,12 +49,14 @@ exports[`configStore() should return a string 1`] = `
 "import { combineReducers } from 'redux';
 import {
     sampleReducer,
+    exampleReducer,
   sharedReducer, 
 
 } from './reducers';
 
 const configureStore = combineReducers({
 sample: sampleReducer,
+example:exampleReducer,
 shared : sharedReducer, 
 
 });
@@ -140,10 +142,12 @@ exports[`reducerTemplate() should return a string 1`] = `
 `;
 
 exports[`rootReducers() should return a string 1`] = `
-"import sampleReducer from './samplepage.reducer';  
+"import sampleReducer from './samplepage.reducer'; 
+    import exampleReducer from './example.reducer';  
 import sharedReducer from './shared.reducer'; 
 
-export {  sampleReducer, 
+export {  sampleReducer,
+    exampleReducer,  
  sharedReducer, 
 };"
 `;
