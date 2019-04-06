@@ -20,7 +20,11 @@
   },
   "keywords": [
     "React",
+    "Redux",
     "Webpack",
+    "Eslint",
+    "Starter",
+    "Bootstrap",
     "NodeJS",
     "CSS",
     "HTML",
