@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-'use strict';
+'use strict'
 const inquirer = require('inquirer');
 const shell = require('shelljs');
 const fs = require('fs');

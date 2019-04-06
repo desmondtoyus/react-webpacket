@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 import Table from '../components/Table';
 import { changeInput, fetchData } from '../redux/actions/samplepage.action';
-import  Views  from '../components/utils';
+import Views from '../components/utils';
 
 
 class SamplePage extends React.Component {
@@ -52,24 +52,26 @@ class SamplePage extends React.Component {
             <title>Page Title</title>
             <meta name="description" content="Meta descriptions.." />
           </Helmet>
+          <h1 className="heading">Sample Page</h1>
           <Table content={results} label="SamplePage Table" />
           <div className="row">
-          <div className="col-md-6">
-            <form>
-              <input
-                type="text"
-                value={search}
-                placeholder="type Desmond"
-                name="search"
-                id="search"
-                onChange={this.handleChange}
-              />
-              <button className="btn btn-outline-success my-2 my-sm-0" name="search-btn" id="search-btn" type="submit" onClick={this.handleSubmit}>Search</button>
-            </form>
+            <div className="col-md-6">
+              <form>
+                <input
+                  type="text"
+                  value={search}
+                  placeholder="type Desmond"
+                  name="search"
+                  id="search"
+                  className="searches"
+                  onChange={this.handleChange}
+                />
+                <button className="btn btn-outline-success my-2 my-sm-0" name="search-btn" id="search-btn" type="submit" onClick={this.handleSubmit}>Search</button>
+              </form>
+            </div>
+            {err ? <span> Input Error</span> : null}
+            <Views />
           </div>
-          {err ? <span> Input Error</span> : null}
-          <Views />
-        </div>
         </div>
       );
     }

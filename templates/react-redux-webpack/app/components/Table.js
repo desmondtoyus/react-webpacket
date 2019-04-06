@@ -54,7 +54,13 @@ class Table extends Component {
 // Do not include required props in the defaultProps
 Table.propTypes = {
   label: PropTypes.string.isRequired,
-  content: PropTypes.arrayOf(PropTypes.object),
+  content: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    plan: PropTypes.string.isRequired,
+  })),
 };
 
 Table.defaultProps = {

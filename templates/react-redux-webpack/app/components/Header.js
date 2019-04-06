@@ -11,7 +11,7 @@ export default class Header extends Component {
   render() {
     return (
       <nav className="navbar navbar-light bg-light">
-        <Link to="/" className="navbar-brand">Home</Link>
+        <Link to="/" className="navbar-brand">Sample Page</Link>
       </nav>
     );
   }
