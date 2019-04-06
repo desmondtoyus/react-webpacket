@@ -1,9 +1,6 @@
 # React-Webpacket
 
-React-webpacket by is a JavaScript library for dealing with the frustration of configuring and setting up react, redux and webpack environment. React-webpacket automatically sets up your react, redux and webpack app environment, no need to bother with redux configuration. Avoid unnecessary time wasting and jump straight into coding. Visit webpacket.org for more information.
-
-## Note
-This is an ongoing work, so it will be updated frequently. It is fully functional but not complete at this time.
+React-webpacket by is a JavaScript library for dealing with the frustration of configuring and setting up react, redux and webpack environment. React-webpacket automatically sets up your react, redux and webpack app environment, no need to bother with redux configuration, webpack settings, eslint and other petty stuff. Avoid unnecessary time wasting and jump straight into doing what you love ♥ - coding. Visit webpacket.org for more information.
 
 ## Installation
 
@@ -21,12 +18,12 @@ react-webpacket [project name]
 Eg. react-webpacket todo_app -> will create a folder 'todo_app' and add all 
     the necessary files to the folder.
 follow the prompt
-1. Select react-redux-webpack
+1. Select react-redux-webpack [press Enter]
 2. Enter names of your views (your App pages), separated by a space.
 3. Enter names of your redux reducers (separated by a space), actions, 
     reducers and a store are automatically created for these reducers.
-4. All dependencies are automatically installed and the App hots reloads
-    in the browser with your pages and redux components.
+4. React-webpacket automatically installs dependencies, fix eslint  and run tests.
+5. The App then hot reloads in the browser with your pages and redux combinereducers, actions and store.
 ```
 
 ## Contributing
