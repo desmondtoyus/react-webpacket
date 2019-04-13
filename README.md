@@ -35,7 +35,7 @@ POST == http://localhost:8008/api/user
     "email":"desmond@webpacket.org",
     "password":"ilovereact",
     "first_name":"Desmond",
-    "last_name":"Ademiluyi",
+    "last_name":"Toye",
     "role":"1",
     "phone":949455454545,
     "status":"active"
