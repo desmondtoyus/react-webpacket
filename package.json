@@ -1,6 +1,6 @@
 {
   "name": "react-webpacket",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "React-webpacket by is a JavaScript library for dealing with the frustration of configuring and setting up react, redux and webpack environment. React-webpacket automatically sets up your react, redux and webpack app environment, no need to bother with redux configuration. Avoid unnecessary time wasting and jump straight into coding. ",
   "main": "index.js",
   "scripts": {
