@@ -3,8 +3,8 @@ exports.QUESTIONS = [
   {
     name: 'projectChoice',
     type: 'list',
-    message: 'Select react-redux-webpack project. ',
-    choices: ['react-redux-webpack'] 
+    message: 'Make a selection. ',
+    choices: ['react-redux-webpack', 'react-redux-webpack-express-sequelize-passport']
 },
 
   {

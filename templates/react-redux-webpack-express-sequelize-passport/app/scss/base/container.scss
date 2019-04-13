@@ -1,0 +1,92 @@
+body {
+    background-color: #e4e4e4;
+	font-family: Open Sans;
+    margin-bottom: 50px;
+    // background-image: url(../assets/images/favicon.png);
+}
+.container__wrap{
+    margin-bottom: 100px;
+}
+.main{
+    margin-top: 100px;
+}
+footer {
+    background-color: #0b0e21;
+    color: white;
+    letter-spacing: 1px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer small {
+    margin-bottom: 10px;
+}
+
+footer span {
+    color: crimson;
+}
+
+@media (max-width: 480px) {
+    
+    footer {
+        padding: 5px;
+    }
+    
+    footer small {
+        display: none;
+    }
+}
+.panel > .list-group
+{
+    margin-bottom: 0;
+}
+.panel > .list-group .list-group-item
+{
+    border-width: 1px 0;
+}
+.panel > .list-group .list-group-item:first-child
+{
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+.panel > .list-group .list-group-item:last-child
+{
+    border-bottom: 0;
+}
+.panel-heading + .list-group .list-group-item:first-child
+{
+    border-top-width: 0;
+}
+.panel-default .list-group-item.active
+{
+    color: #000;
+    background-color: #DDD;
+    border-color: #DDD;
+}
+.panel-primary .list-group-item.active
+{
+    color: #FFF;
+    background-color: #428BCA;
+    border-color: #428BCA;
+}
+.panel-success .list-group-item.active
+{
+    color: #3C763D;
+    background-color: #DFF0D8;
+    border-color: #D6E9C6;
+}
+
+.panel a.list-group-item.active:hover, a.list-group-item.active:focus
+{
+    color: #000;
+    background-color: #DDD;
+    border-color: #DDD;
+}
