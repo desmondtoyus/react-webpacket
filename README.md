@@ -26,7 +26,7 @@ follow the prompt
 ```
 ## Notes
 ```bash
-if you select 'react-redux-webpack-express-sequelize-passport'
+if you select => react-redux-webpack-express-sequelize-passport
 you must create a database and edit the setting in /server/config/config.json with your credentials.
 Run npm run startapp or yarn startapp to start the client and the server.
 Api routes is at /api. eg
