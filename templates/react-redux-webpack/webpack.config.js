@@ -27,7 +27,7 @@ const config = {
     rules: [
       // Disable require.ensure as it's not a standard language feature.
       { parser: { requireEnsure: false } },
-      //
+      
       {
         test: /\.(js|jsx)$/,
         enforce: 'pre',
@@ -61,6 +61,17 @@ const config = {
         },
       },
       {
+        test:  /\.(woff|woff2)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
+          }
+        ]
+      },
+      {
         test: /\.(sa|sc|c)ss$/,
         use: [
           MiniCssExtractPlugin.loader,
@@ -69,7 +80,7 @@ const config = {
         ],
       },
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
+        test: /\.(gif|png|jpe?g|svg|ttf|eot|svg)$/i,
         use: [
           'file-loader',
           {
