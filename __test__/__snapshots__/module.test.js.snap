@@ -5,8 +5,9 @@ Array [
   Object {
     "choices": Array [
       "react-redux-webpack",
+      "react-redux-webpack-express-sequelize-passport",
     ],
-    "message": "Select react-redux-webpack project. ",
+    "message": "Make a selection. ",
     "name": "projectChoice",
     "type": "list",
   },

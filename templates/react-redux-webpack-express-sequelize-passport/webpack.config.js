@@ -1,16 +1,15 @@
 const path = require('path');
+const webpack = require('webpack');
+const dotenv = require('dotenv');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
-const BUILD_DIR = path.resolve(__dirname, 'build');
+dotenv.load();
 const APP_DIR = path.resolve(__dirname, 'app/index.js');
 const devMode = process.env.NODE_ENV !== 'production';
 const config = {
   entry: { main: APP_DIR },
   output: {
-    path: BUILD_DIR,
+    path: path.resolve(__dirname, 'build'),
     publicPath: '/',
     filename: '[name].[chunkhash].js',
   },
@@ -26,6 +25,7 @@ const config = {
     strictExportPresence: true,
     rules: [
       // Disable require.ensure as it's not a standard language feature.
+      // uncomment this to add Eslint functionalities
       { parser: { requireEnsure: false } },
       
       {
@@ -92,19 +92,10 @@ const config = {
           },
         ],
       },
-    ],
-  },
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-    },
-    minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: true,
-      }),
-      new OptimizeCSSAssetsPlugin({}),
+      {
+        test: /\.mp4$/,
+        use: 'file-loader?name=[name].[ext]'
+ },
     ],
   },
   plugins: [
@@ -115,6 +106,9 @@ const config = {
       filename: devMode ? '[name].css' : '[name].[hash].css',
       chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
     }),
+  new webpack.DefinePlugin({
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || "development")
+}),
   ],
 };
 module.exports = config;

@@ -23,12 +23,14 @@ follow the prompt
 3. Enter names of your redux reducers (separated by a space), actions, 
     reducers and a store are automatically created for these reducers.
 4. React-webpacket automatically installs dependencies, fix eslint and then hot reloads in the browser with your pages and redux combinereducers, actions and store.
+5. Open http://localhost:8008
 ```
 ## Notes
 ```bash
 if you select => react-redux-webpack-express-sequelize-passport
 you must create a database and edit the setting in /server/config/config.json with your credentials.
-Run npm run startapp or yarn startapp to start the client and the server.
+Run npm run start or yarn start to start the client and the server.
+Open http://localhost:8008
 Api routes is at /api. eg
 POST == http://localhost:8008/api/user
     {

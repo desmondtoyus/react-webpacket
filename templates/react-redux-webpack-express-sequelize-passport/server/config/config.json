@@ -1,17 +1,17 @@
 {
   "development": {
-    "username": "your_db_username",
+    "username": "bwaadmin",
     "password": null,
-    "database": "db_name",
+    "database": "webpacket",
     "host": "localhost",
     "dialect": "postgres"
   },
   "test": {
-    "username": "your_db_username",
-    "password": "your_password",
-    "database": "db_name",
-    "host": "your_host",
-    "dialect": "mysql_or_postgres_or_whatever_you_are_using"
+    "username": "bwaadmin",
+    "password": null,
+    "database": "webpacket",
+    "host": "localhost",
+    "dialect": "postgres"
   },
   "production": {
     "username": "your_db_username",
