@@ -2,11 +2,9 @@ const express = require('express');
 const path = require('path');
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
-
+dotenv.load();
 const app = express();
 const PORT = process.env.PORT || 8008;
-
-dotenv.load();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -22,5 +20,5 @@ app.get('/*', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Development Environment: ${process.env.NODE_ENV} Listen on port ${PORT}...`);
+  console.log(`Development Environment: ${process.env.NODE_ENV} 🌎 Listening on http://localhost:${PORT}`);
 });

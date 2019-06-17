@@ -25,6 +25,12 @@ follow the prompt
 4. React-webpacket automatically installs dependencies, fix eslint and then hot reloads in the browser with your pages and redux combinereducers, actions and store.
 5. Open http://localhost:8008
 ```
+
+## Test 
+```
+yarn test  or npm run test
+
+```
 ## Notes
 ```bash
 if you select => react-redux-webpack-express-sequelize-passport
