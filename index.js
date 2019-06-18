@@ -11,7 +11,7 @@ const {viewTemplate,  actionTemplate, reducerTemplate, rootReducers, configStore
 inquirer.prompt(QUESTIONS)
   .then((answers) => {
     const projectChoice = answers['projectChoice'];
-    const projectName = process.argv[2] || 'wepacket_app';
+    const projectName = process.argv[2] || 'webpacket_app';
     const templatePath = `${__dirname}/templates/${projectChoice}`;
     const views = answers['views'];
     const reactRedux = answers['reactRedux'];
